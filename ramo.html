@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ramo de flores para mi novia</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+      
+        <!-- Fuente más elegante y legible -->
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">        
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+      
+        <style>
+          body {
+            margin: 0;
+            background-color: #f8e1f4;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            padding-top: 60px;
+            height: 100vh;
+            font-family: 'Dancing Script', cursive;
+          }
+      
+          canvas {
+            display: block;
+          }
+
+          /* Posicionamos la primera imagen a la izquierda y más inclinada */
+          .image-container {
+            position: absolute;
+            top: 250px;  /* Ajustar esta posición para mover la imagen más abajo */
+            left: 120px; /* Ajustar para mover más a la izquierda */
+            width: 300px;
+            height: 300px;
+            z-index: 10;
+            transform: rotate(-15deg); /* Inclinación de la imagen */
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 3px solid black; /* Borde negro alrededor de la imagen */
+          }
+
+          /* Segunda imagen debajo de la primera */
+          .image-container2 {
+            position: absolute;
+            top: 650px;  /* Ajustar para que la imagen esté más abajo */
+            left: 1500px; /* Mover a la izquierda */
+            width: 250px;
+            height: 250px;
+            z-index: 5;
+            transform: rotate(25deg); /* Inclinación de la segunda imagen */
+          }
+
+          /* Añadiendo más imágenes alrededor del ramo */
+          .image-container3, .image-container4, .image-container5, .image-container6, .image-container7, .image-container8 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            z-index: 5;
+            border-radius: 10px;
+            border: 3px solid black;
+            transform: rotate(15deg);
+          }
+
+          /* Posiciones para las imágenes alrededor del ramo */
+          .image-container3 { top: 200px; left: 1500px; }
+          .image-container4 { top: 700px; left: 150px;  transform: rotate(-15deg);}
+          .image-container5 { top: 800px; left: 850px; }
+          .image-container6 { top: 150px; left: 850px; transform: rotate(5deg);}
+          .image-container7 { top: 450px; left: 550px; transform: rotate(1deg);}
+          .image-container8 { top: 450px; left: 1200px;  transform: rotate(1deg); }
+          /* Botón para reproducir la música */
+      #playButton {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        background-color: #f8a5d4;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      #playButton:hover {
+        background-color: #f7a0c6;
+      }
+        </style>
+    </head>
+      
+    <body>
+      <!-- Agregar música de fondo -->
+       <!-- Botón para iniciar la música -->
+    <button id="playButton">TOCAME</button>
+    <audio id="backgroundMusic" autoplay loop>
+      <source src="musica.mp3" type="audio/mp3" />    
+    </audio>
+
+      <div class="image-container" id="image1">
+        <img src="foto1.png" alt="Imagen de amor" />
+      </div>
+    
+      <div class="image-container2" id="image2">
+        <img src="foto2.png" alt="Otra imagen" />
+      </div>
+    
+      <!-- Nuevas imágenes alrededor del ramo -->
+      <div class="image-container3" id="image3">
+        <img src="foto3.png" alt="Otra imagen" />
+      </div>
+    
+      <div class="image-container4" id="image4">
+        <img src="foto4.png" alt="Otra imagen" />
+      </div>
+    
+      <div class="image-container5" id="image5">
+        <img src="foto5.png" alt="Otra imagen" />
+      </div>
+    
+      <div class="image-container6" id="image6">
+        <img src="foto6.png" alt="Otra imagen" />
+      </div>
+    
+      <div class="image-container7" id="image7">
+        <img src="foto7.png" alt="Otra imagen" />
+      </div>
+    
+      <div class="image-container8" id="image8">
+        <img src="foto8.png" alt="Otra imagen" />
+      </div>
+      <script>
+        // Obtener el botón y la música
+        const playButton = document.getElementById("playButton");
+        const music = document.getElementById("backgroundMusic");
+  
+        // Función para iniciar la música cuando el usuario haga clic
+        playButton.addEventListener("click", () => {
+          music.play(); // Reproducir música
+          playButton.style.display = "none"; // Ocultar el botón después de hacer clic
+        });
+      </script>
+
+  <script src="flores.js"></script>
+  <script src="animacionImagenes.js"></script>
+  <script src="fuegos.js"></script>
+
+
+</body>
+</html>
+
+

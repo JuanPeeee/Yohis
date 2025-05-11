@@ -1,0 +1,19 @@
+/* Estilo de las imágenes */
+.image-container {
+    position: absolute;
+    opacity: 0; /* Empezar invisibles */
+    transform: translateY(-200px) scale(0.8); /* Comenzar fuera de la pantalla y más pequeñas */
+    width: 300px;
+    height: 300px;
+    z-index: 10;
+    transition: opacity 1s, transform 1s ease-out; /* Animación suave de caída y expansión */
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 3px solid black;
+  }
+  
